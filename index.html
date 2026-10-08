@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-font="normal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASHA – AI Smart Health Assistant</title>
+  <meta name="description" content="ASHA is an AI-powered elderly care and daily health assistant for medicines, appointments, activities and health records.">
+  <meta name="theme-color" content="#0d7c74">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Welcome / Login -->
+  <div id="auth-screen" class="auth" hidden></div>
+
+  <!-- Main application -->
+  <div id="app" class="app" hidden>
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="" class="brand-logo" width="48" height="48">
+        <div>
+          <div class="brand-name">ASHA</div>
+          <div class="brand-sub">AI Smart Health Assistant</div>
+        </div>
+      </div>
+      <nav id="nav" class="nav"></nav>
+      <div class="sidebar-foot">
+        <button class="btn btn-emergency btn-block" data-action="emergency" type="button"></button>
+      </div>
+    </aside>
+    <div class="sidebar-backdrop" data-action="close-menu"></div>
+
+    <div class="main-wrap">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" data-action="open-menu" type="button" aria-label="Open menu"></button>
+        <div class="topbar-title">
+          <h1 id="page-title">Dashboard</h1>
+          <p id="page-date" class="topbar-date"></p>
+        </div>
+        <div class="topbar-actions">
+          <div id="lang-switcher" class="lang-switcher">
+            <button class="btn-lang" data-action="set-language" data-lang="en">EN</button>
+            <button class="btn-lang" data-action="set-language" data-lang="hi">हिंदी</button>
+          </div>
+          <a href="#/notifications" class="icon-btn bell-btn" id="bell-btn" aria-label="Notifications"></a>
+          <a href="#/profile" class="avatar-btn" id="avatar-btn" aria-label="Profile and settings"></a>
+          <button class="btn btn-emergency topbar-sos" data-action="emergency" type="button"></button>
+        </div>
+      </header>
+
+      <main id="main" tabindex="-1"></main>
+
+      <footer class="app-footer">
+        <p><strong>ASHA</strong> – Your caring companion for everyday health. ASHA does not provide medical diagnosis. Always consult a qualified healthcare professional for medical concerns. In an emergency, call <a href="tel:108">108</a>.</p>
+      </footer>
+    </div>
+
+    <nav class="bottom-nav" id="bottom-nav" aria-label="Quick navigation"></nav>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/icons.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
